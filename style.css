@@ -1,0 +1,100 @@
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #9fb7ff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  background: linear-gradient(180deg, #071025, #071427);
+  color: #dce7ff;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.controls select, .controls button {
+  margin-left: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0f1724;
+  color: #dce7ff;
+}
+
+main {
+  display: flex;
+  gap: 18px;
+  padding: 16px;
+}
+
+.left {
+  flex: 1;
+}
+
+.right {
+  width: 320px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  background: #081527;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.6);
+}
+
+.meters, .legend, .tips {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.legend .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.tile {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.sample.road { background: #7b7b7b; }
+.sample.house { background: #ffd4a3; }
+.sample.factory { background: #c6f6d5; }
+.sample.park { background: #8be58b; }
+
+footer {
+  padding: 12px 20px;
+  color: rgba(220, 231, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+  main {
+    flex-direction: column;
+  }
+  .right {
+    width: auto;
+  }
+}
