@@ -7,20 +7,25 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Mini City Simulator</h1>
+  <header class="glass-header">
+    <h1>🏙️ Mini City Simulator</h1>
     <div class="controls">
       <label>Tool:
         <select id="toolSelect">
-          <option value="road">Road</option>
-          <option value="house">House</option>
-          <option value="factory">Factory</option>
-          <option value="park">Park</option>
-          <option value="erase">Erase</option>
+          <option value="road">🛣️ Road</option>
+          <option value="house">🏠 House</option>
+          <option value="factory">🏭 Factory</option>
+          <option value="park">🌳 Park</option>
+          <option value="erase">❌ Erase</option>
         </select>
       </label>
-      <button id="clearBtn">Clear</button>
-      <button id="randomBtn">Random</button>
+      <button id="clearBtn">🧹 Clear</button>
+      <button id="randomBtn">🎲 Random</button>
+      <button id="saveBtn">💾 Save City</button>
+      <button id="zoomInBtn">➕ Zoom In</button>
+      <button id="zoomOutBtn">➖ Zoom Out</button>
+      <button id="nightModeBtn">🌙 Night Mode</button>
+      <button id="statsBtn">📊 Stats</button>
     </div>
   </header>
 
@@ -29,36 +34,37 @@
       <canvas id="cityCanvas" width="640" height="640"></canvas>
     </section>
 
-    <aside class="right">
+    <aside class="right glass-panel">
       <div class="meters">
-        <div>Money: <span id="money">1000</span></div>
-        <div>Energy: <span id="energy">100</span></div>
-        <div>Population: <span id="population">0</span></div>
-        <div>Happiness: <span id="happiness">50</span>%</div>
+        <div>💰 Money: <span id="money">1000</span></div>
+        <div>⚡ Energy: <span id="energy">100</span></div>
+        <div>👨‍👩‍👧 Population: <span id="population">0</span></div>
+        <div>😊 Happiness: <span id="happiness">50</span>%</div>
       </div>
 
       <div class="legend">
-        <h3>Legend</h3>
+        <h3>🧭 Legend</h3>
         <div class="row"><span class="tile sample road"></span> Road</div>
         <div class="row"><span class="tile sample house"></span> House</div>
         <div class="row"><span class="tile sample factory"></span> Factory</div>
         <div class="row"><span class="tile sample park"></span> Park</div>
       </div>
-
-      <div class="tips">
-        <h4>Tips</h4>
-        <ul>
-          <li>Connect houses with roads for population growth.</li>
-          <li>Factories produce money but consume energy.</li>
-          <li>Parks raise happiness.</li>
-        </ul>
-      </div>
     </aside>
   </main>
 
   <footer>
-    <small>Built for learning: grid logic, canvas, simple simulation.</small>
+    <small>Designed with ❤️ by Ankur — inspired by Apple simplicity 🍏</small>
   </footer>
+
+  <!-- Popup -->
+  <div id="statsPopup" class="popup hidden glass-panel">
+    <h3>📊 City Statistics</h3>
+    <p><strong>Total Buildings:</strong> <span id="totalBuildings">0</span></p>
+    <p><strong>Road Network:</strong> <span id="roadCount">0</span></p>
+    <p><strong>Factories:</strong> <span id="factoryCount">0</span></p>
+    <p><strong>Parks:</strong> <span id="parkCount">0</span></p>
+    <button id="closeStats">Close</button>
+  </div>
 
   <script src="app.js"></script>
 </body>
